@@ -1,8 +1,8 @@
-
 import matplotlib.pyplot as plt
-x1, x2 = map(int, input(" Enter x coordinates of a line :").split())
-y1, y2 = map(int, input("Enter y coordinates of a line ").split())
-print(f"The x coordinates are{x1,x2} and y coordinates are{y1,y2}")
+
+x1, x2 = map(int, input(" Enter the x coordinates of a line:").split())
+y1, y2 = map(int, input("Enter the y coordinates of a line:").split())
+print(f"The x coordinates are {x1,x2} and y the coordinates are{y1,y2}.")
 
 dx = x2 - x1
 dy = y2 - y1
@@ -12,7 +12,7 @@ y = y1
 M = (y2 - y1) / (x2 - x1)
 
 
-if abs(dx) > abs(y) or M < 1:
+if abs(dx) > abs(dy) or M < 1:
     steps = abs(dx)
 else:
     steps = abs(dy)
@@ -23,6 +23,7 @@ Y_incr = dy / float(steps)
 xs = [x]
 ys = [y]
 print("Step\tX\tY\tRounded X\tRounded Y")
+print("-" * 50)
 for i in range(steps):
     if i < steps:
         x += X_incr
@@ -36,9 +37,8 @@ for i in range(steps):
         print(f"{i + 1}\t{x:.2f}\t{y:.2f}\t{round_x}\t\t{round_y}")
 
 plt.plot(xs, ys,'bo-')
-plt.title("Subash Katwal")
+plt.title("Saurab Kunwar")
 plt.xlabel("X-axis")
 plt.ylabel("Y-axis")
 plt.grid(True)
 plt.show()
-

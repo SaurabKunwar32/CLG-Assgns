@@ -4,6 +4,7 @@
 #define e 2.71828
 #define f(x) (cos(x) + 2*sin(x) + x*x)
 
+
 int main() {
     float x, E, x_root, Error;
 

@@ -1,6 +1,6 @@
 
-# write a program to implement 2D geomertic transformation
-# a)translastion  (b)rotation (c)scaling
+# write a program to implement 2D geometric transformation
+# a)translation  (b)rotation (c)scaling
 
 
 import matplotlib.pyplot as plt
@@ -107,6 +107,6 @@ while True:
         scaling()
     elif choice == '4':
         print("Exiting the program.")
-        break
+        break;
     else:
         print("Invalid choice. Please enter a valid option.")

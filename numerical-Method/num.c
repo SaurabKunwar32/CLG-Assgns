@@ -9,7 +9,7 @@ int main() {
     float x, E, x_root, Error;
 
     printf("Enter the initial guess: \n");
-    scanf("%f", &x);
+    scanf("%f", &x);`
 
     printf("Enter precision: ");
     scanf("%f", &E);

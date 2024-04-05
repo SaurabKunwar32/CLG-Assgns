@@ -1,45 +1,45 @@
 #include <stdio.h>
 
-// Define the function f(x, y) representing the ordinary differential equation dy/dx = f(x, y)
+// Define the function f(x, y)
 float f(float x, float y) {
-    return x*x+ y*y; // Example: dy/dx = x + y
+    return  (x*x) + (y*y);
 }
 
-// Perform one step of RK4 method
-float runge_kutta_step(float x, float y, float h) {
-    float k1 = h * f(x, y);
-    float k2 = h * f(x + h/2, y + k1/2);
-    float k3 = h * f(x + h/2, y + k2/2);
-    float k4 = h * f(x + h, y + k3);
-    return y + (k1 + 2*k2 + 2*k3 + k4) / 6;
+// Implement the Runge-Kutta 4th order method
+float rungeKutta(float x0, float y0, float xp, float h) {
+    float k1, k2, k3, k4;
+    float y = y0;
+    float x = x0;
+
+    while (x < xp) {
+        k1 = h * f(x, y);
+        k2 = h * f(x + h / 2, y + k1 / 2);
+        k3 = h * f(x + h / 2, y + k2 / 2);
+        k4 = h * f(x + h, y + k3);
+
+        y = y + (k1 + 2 * k2 + 2 * k3 + k4) / 6;
+        x = x + h;
+    }
+
+    return y;
 }
 
 int main() {
-    float x0, y0, h, x_end;
-    int N;
+    float x0, y0, xp, h;
 
-    // Input initial values, step size, number of steps, and end point
-    printf("Enter the initial value of x and y: ");
-    scanf("%f%f", &x0, &y0);
-
-    printf("Enter the step size (h): ");
+    // Input initial values, x value for evaluation, and step size
+    printf("Enter the initial values of X and Y:\n");
+    scanf("%f %f", &x0, &y0);
+    printf("Enter X at which function is to be evaluated:\n");
+    scanf("%f", &xp);
+    printf("Enter the step size:\n");
     scanf("%f", &h);
 
-    printf("Enter the number of steps (N): ");
-    scanf("%d", &N);
+    // Calculate the result using Runge-Kutta method
+    float result = rungeKutta(x0, y0, xp, h);
 
-    printf("Enter the end point (x_end): ");
-    scanf("%f", &x_end);
-
-    // Perform RK4 method
-    float y = y0;
-    for (int i = 0; i < N; i++) {
-        y = runge_kutta_step(x0, y, h);
-        x0 += h;
-    }
-
-    // Output the final approximation
-    printf("The approximation of y(%.3f) using RK4 after %d steps is: %.4f\n", x_end, N, y);
+    // Output the result
+    printf("Function Value at x=%f is: %f\n", xp, result);
 
     return 0;
 }

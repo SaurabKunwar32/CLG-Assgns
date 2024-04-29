@@ -7,5 +7,12 @@
         "statusBarItem.remoteForeground": "#e7e7e7",
         "sash.hoverBorder": "#1f6fd0"
     },
-    "peacock.color": "#1857a4"
+    "peacock.color": "#1857a4",
+    "files.associations": {
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp"
+    }
 }

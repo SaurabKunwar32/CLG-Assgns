@@ -41,8 +41,8 @@ void dequeue()
     }
     else
     {
-        printf("Dequed item is:%d\n", quque[front]);
-        front++;
+        printf("Dequed item is haha:%d\n", quque[front]);
+       quque[front]=front++;
     }
 }
 

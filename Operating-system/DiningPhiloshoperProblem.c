@@ -42,7 +42,7 @@ void *philosopher(void *num)
     id, eat_count);
     return NULL;
 }
-
+ 
 int main()
 {
     pthread_t philosophers[NUM_PHILOSOPHERS];

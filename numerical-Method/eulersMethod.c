@@ -12,9 +12,10 @@ int main()
     printf("Enter the step size:\n");
     scanf("%f", &h);
     y = yo;
-    x=xo;
-    for(x=xo;x<xp;x=x+h){
-        y=y+f(x,y)*h;
+    x = xo;
+    for (x = xo; x < xp; x = x + h)
+    {
+        y = y + f(x, y) * h;
     }
     printf("Function Value at x=%f is:%f", xp, y);
     return 0;
